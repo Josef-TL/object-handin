@@ -7,6 +7,8 @@ const getUniqueCharactersFromString = (array) => {
     });
 };
 
+// Takes two arrays. Counts characters in the second array, against the first.
+//Returns an array of objects, where objects have keys character and count
 function countCharacters(countThese, countInThis) {
     const charCountArray = [];
 
@@ -28,9 +30,14 @@ function countCharacters(countThese, countInThis) {
         charCountArray[i] = characterObject;
     }
     return charCountArray
+    // charCountArray= [{
+    // character: "a",
+    // count: 1}
+    // ]
 }
 
-
+// Takes a string and returns an object with keys characters and lenght.
+// Characters has value array of objects
 function getCharacterFrequencies(str){
     // Block non-strings
     if (typeof str !== "string") return "Please input a string";
