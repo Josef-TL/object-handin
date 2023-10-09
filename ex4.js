@@ -1,5 +1,5 @@
 // check if the index of the current value is equals to the index
-// of the first apperance.
+// of the first apperance. If it is, it get filtered.
 
 const getUniqueCharactersFromString = (array) => {
     return array.filter((e,i,a)=>{
