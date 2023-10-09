@@ -7,6 +7,29 @@ const getUniqueCharactersFromString = (array) => {
     });
 };
 
+function countCharacters(countThese, countInThis) {
+    const charCountArray = [];
+
+    // run this for each unique character
+    for (let i = 0; i < countThese.length; i++) {
+        // temp object
+        const characterObject = {};
+
+        //Create obj key "character" and init count
+        characterObject.character = countThese[i]
+        let charCount = 0
+
+        // Run through entire string, and count each occurence of current unique char
+        for (let j = 0; j < countInThis.length; j++) {
+            if (countInThis[j] === countThese[i]) charCount += 1
+        }
+        // complete char object, and input into final array
+        characterObject.count = charCount;
+        charCountArray[i] = characterObject;
+    }
+    return charCountArray
+}
+
 
 function getCharacterFrequencies(str){
     // Block non-strings
@@ -19,25 +42,9 @@ function getCharacterFrequencies(str){
 
     // Find all unique characters in string
     const uniqueChars = getUniqueCharactersFromString(stringArray).sort();
-    const characterArray = [];
 
-    // run this for each unique character
-    for (let i = 0; i < uniqueChars.length; i++) {
-        // temp object
-        const characterObject = {};
-
-        //Create obj key "character" and init count
-        characterObject.character = uniqueChars[i]
-        let charCount = 0
-
-        // Run through entire string, and count each occurence of current unique char
-        for (let j = 0; j < stringArray.length; j++) {
-            if (stringArray[j] === uniqueChars[i]) charCount += 1
-        }
-        // complete char object, and input into final array
-        characterObject.count = charCount;
-        characterArray[i] = characterObject;
-    }
+    // Count unique characters
+    const characterArray = countCharacters(uniqueChars,stringArray);
 
 
     // Input main string length and character array in an object
