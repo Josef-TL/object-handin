@@ -1,5 +1,4 @@
 function rollTheDice(num){
-
     for (let i = 0; i < num; i++) {
         //Random number between 1 and 6:
         let diceRoll = Math.ceil(Math.random()*6);
@@ -11,6 +10,7 @@ function rollTheDice(num){
 }
 
 // Better function, added stuff
+// USE THIS ONE!!!!
 function rollTheDiceAlt(num) {
     // init dice rolls
     const diceRolls = [];
@@ -18,7 +18,6 @@ function rollTheDiceAlt(num) {
     // populate dice rolls with random numbers
     for (let i = 0; i < num; i++) {
         diceRolls[i] = Math.ceil(Math.random()*6);
-
     }
 
     // Check if diceRolls contains only 6
@@ -27,23 +26,9 @@ function rollTheDiceAlt(num) {
 
     // Log out, every time array contains 6
     for (const e in diceRolls) {
-        if (diceRolls[e] === 6) {
-            console.log("You just hit 6")
-        }
+        if (diceRolls[e] === 6) console.log("You just hit 6");
     }
-
 }
 
-rollTheDiceAlt(10);
-
-// This means roll the dice 3 times. 6 is hit once
-rollTheDice(3);
-// You just hit 6
-
-// The dice is rolled 5 times with 2 hits
-rollTheDice(5);
-// You just hit 6
-// You just hit 6
-
-// Here the user rolls 5 times but does not hit 6 even once
-rollTheDice(5);
+rollTheDice(5)
+rollTheDiceAlt(2);

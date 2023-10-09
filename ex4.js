@@ -15,7 +15,10 @@ function countCharacters(countThese, countInThis) {
     // run this for each unique character
     for (let i = 0; i < countThese.length; i++) {
         // temp object
-        const characterObject = {};
+        const characterObject = {
+            character: "",
+            count: 0
+        };
 
         //Create obj key "character" and init count
         characterObject.character = countThese[i]
@@ -30,10 +33,6 @@ function countCharacters(countThese, countInThis) {
         charCountArray[i] = characterObject;
     }
     return charCountArray
-    // charCountArray= [{
-    // character: "a",
-    // count: 1}
-    // ]
 }
 
 // Takes a string and returns an object with keys characters and lenght.

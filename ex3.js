@@ -21,7 +21,7 @@ function getSentimentScore(str){
     // If str is not string, dont run
     if(typeof str !== "string") return "Please input a string";
 
-    // make an array, else the filter function wont work.
+    // make an array, else the filter function won't work.
     let splitString = [""];
 
     // split the string
@@ -44,14 +44,13 @@ function getSentimentScore(str){
         positiveWords: positiveWords,
         negativeWords: negativeWords
     };
-
 }
 
 // call the function and log it
 // The functions counts words, even with no spaces. It cannot print the correct words, but gives a score.
 console.log(getSentimentScore('Dead inside.'));
 console.log(getSentimentScore('I am mega super awesome happy'));
-console.log(getSentimentScore('I am mega superawesomehappy'));
+console.log(getSentimentScore('I am mega superawesomehappy, but hate math and bad grammar'));
 
 
 
